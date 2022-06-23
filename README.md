@@ -1,13 +1,15 @@
 # Uart_debuger
 ## How to use it
-- Make sure that you are inside the project folder before executing any of the following commands
-- Build the debugger by executing the following command:
+### Prerequisites
+- The current code was built using *gcc version 7.5.0*
+
+### Build the debugger by executing the following command:
 
 ```shell
 make gdb_uart
 ```
 
-- Run the uart debugger 
+### Run the uart debugger 
 
 ```shell
 ./build/gdb_uart
