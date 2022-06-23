@@ -14,8 +14,9 @@ straightforward as possible.
 ### In-Progress
 - The buffer analysis shall be established based on the design needs.
 
-### Planned
-#### [Refactoring] 
-- Optimizing the software to trace the connectivity of UART and adjust com and baudrate.
+### Planned  
+- [**Refactoring**] Optimizing the software to trace the connectivity of UART and adjust com and baudrate.
 
 
+<!-- TODO: The future development planing, bugFix, added features shall be mentioned here -->
+<!-- TODO: When the tool is ready, a release shall be prepared and mentioned here too -->
