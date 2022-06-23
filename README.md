@@ -1,41 +1,64 @@
 # Uart_debuger
-## steps to execute
+## How to use it
+- Make sure that you are inside the project folder before executing any of the following commands
+- Build the debugger by executing the following command:
 
--to compile 
-
-```
-
+```shell
 make gdb_uart
-
 ```
 
--to run 
+- Run the uart debugger 
 
+```shell
+./build/gdb_uart
 ```
-./build/gdb_uart 
-
-```
-
-here we can see the class diagram of software 
-
 ----------------------------
---------------------------
 
-![image](https://user-images.githubusercontent.com/66727825/175168199-2dd576bb-730d-4855-8ecd-7ee07c07ca4f.png)
+## Design snippets
+```plantuml
+@startuml "ClassDiagram"
+' Objects
+class UartManager {
+  execel_manager: ExcelManager
+  file_manager: FileMAnager
+  +logmessages()
+  +storeanalysis()
+}
+class Logger {
+  clock: String
+  +Write()
+}
+class UartAdapter {
+  frame: Frame
+  baudrate: Int
+  comport: String
+  +analysisbuffer(buffer): frame
+}
+class FileManager {
+  buffer
+  +getdata()
+  +writedata()
+}
+class Frame <<struct>> {
+  character: char
+  bits[8]: bool
+  graphical_buffer: String
+}
+class ExcelManager {
+  excelfile: String
+  +Excel_open()
+  +Excel_Write()
+  +Excel_close()
+}
 
+' Relations
+UartManager .l.> Logger       : <<use>>
+UartManager .r.> FileManager  : <<use>>
+UartManager -u-|> UartAdapter 
+UartAdapter o-u- Frame
+UartAdapter -r- FileManager
+Logger -u-|> ExcelManager
 
-----------------------------
---------------------------
+@enduml
+```
 
-
-sprint 1: achieved
-
-  we now can log the uart message to excel sheet
-  
-sprint 2: in progress
-
-  we just need to anaylsis the buffer like shown in figure in notepad and write into file like screnshot
- 
- sprint 3: refactor
- 
-  -optmize software to trace connectivity of uart and adjust com and baudrate
