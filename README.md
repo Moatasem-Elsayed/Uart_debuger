@@ -1,18 +1,19 @@
-# Uart_debuger
+# Uart_debugger
 ## steps to execute
 
 -to compile 
 
-```
-
-make gdb_uart
-
+```bash
+>> mkdir build
+>> cd build
+>> cmake ../
+>> make
 ```
 
 -to run 
 
-```
-./build/gdb_uart 
+```bash
+./uart_debugger
 
 ```
 
