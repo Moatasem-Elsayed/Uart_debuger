@@ -1,7 +1,10 @@
-#include "UartManger.hpp"
-UartManger::UartManger(std::string logfile, std::string anaylsis_file) : m_logfile(logfile), m_filemanger(anaylsis_file)
-{
-    std::cout << "create files are done " << std::endl;
+#include "../lib/UartManger.hpp"
+
+
+UartManger::UartManger(std::string log_file, std::string analysis_file) 
+  : m_logfile(log_file), 
+    m_filemanger(analysis_file) {
+        std::cout << "create files are done " << std::endl;
 }
 void UartManger::log_messages()
 {
@@ -27,7 +30,4 @@ void UartManger::log_messages()
         }
     }
     exit(1);
-}
-UartManger::~UartManger()
-{
 }

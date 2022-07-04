@@ -17,7 +17,6 @@ public:
     UartManger() = default;
     UartManger(std::string excel_file, std::string anaylsis_file);
     void log_messages();
-    // void store_anaylsis(); //stil in progress
-    ~UartManger();
+    ~UartManger() = default;
 };
 #endif

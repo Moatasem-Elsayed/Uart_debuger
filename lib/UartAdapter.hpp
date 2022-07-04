@@ -17,6 +17,6 @@ protected:
     UartAdapter() = default;
     UartAdapter(uint32_t baudrate, std::string com);
     Frame analysisbuffer(std::string buffer);
-    ~UartAdapter();
+    ~UartAdapter() = default;
 };
 #endif

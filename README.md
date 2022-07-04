@@ -1,21 +1,24 @@
-# Uart_debuger
+# Uart_debugger
+## steps to execute
 
 <!-- TODO: An introduction about the project and its use-cases shall be written here. -->
 ## How to use it
 ### Prerequisites
 - The current code was built using *gcc version 7.5.0*
 
-### Build the debugger by executing the following command:
-
-```shell
-make gdb_uart
+```bash
+>> mkdir build
+>> cd build
+>> cmake ../
+>> make
 ```
 
 ### Run the uart debugger 
 
-```shell
-./build/gdb_uart
+```bash
+./uart_debugger
 ```
+
 ----------------------------
 
 ## Design snippets
