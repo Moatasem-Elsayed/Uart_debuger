@@ -1,20 +1,20 @@
-#include <string>
-#include <string.h>
-#include <iostream>
 #include <algorithm>
-#include <fstream>
 #include <experimental/filesystem>
-#include "lib/UartManger.hpp"
+#include <fstream>
+#include <iostream>
+#include <string>
 #include <unistd.h>
+#include "lib/uart_manager.hpp"
 
-int main()
-{
+// Todo: The main function shall take user arguments
+/// ./<binary> -<configFilePath> -<analysisFilePath>
+int main(/*should be used*/) {
+    const std::string log_file_path{ "logs/log_file.csv" };
+    const std::string analysis_file_path{ "logs/analysis_file.txt" };
+    uart::debugger::UartManager uart_manager(log_file_path, analysis_file_path);
 
-    UartManger um("logs/log_file.csv", "logs/analysis_file.txt");
-
-    while (1)
-    {
-        um.log_messages();
+    while (true) {
+        uart_manager.log_messages();
     }
     return 0;
 }
