@@ -17,8 +17,8 @@ void PrintHelp() {
 
 std::map<std::string, std::string> GetArgs(int argc, char** argv) {
     // could use std::pair .. but the map would help with future extendions
-    std::map<std::string, std::string> argument_map; 
-    
+    std::map<std::string, std::string> argument_map;
+
     const char* const short_opts = "l:a:h";
     const option long_opts[] = {
         { "LogFilePath", required_argument, nullptr, 'l' },
@@ -29,10 +29,8 @@ std::map<std::string, std::string> GetArgs(int argc, char** argv) {
 
     while (true) {
         const auto opt = getopt_long(argc, argv, short_opts, long_opts, nullptr);
-
         if (-1 == opt)
             break;
-
         switch (opt) {
         case 'l':
             argument_map["LogFilePath"] = std::string(optarg);
@@ -60,6 +58,6 @@ int main(int argc, char** argv) {
         // Exiting the program after printing the help menu.
         PrintHelp();
     }
-    
+
     return 0;
 }

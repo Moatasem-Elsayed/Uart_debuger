@@ -16,9 +16,21 @@
 ### Run the uart debugger 
 
 ```bash
-./uart_debugger
+./uart_debugger -l "pathToLogFile" -a "pathToAnalysisFile"
+```
+or
+```bash
+./uart_debugger --LogFilePath "pathToLogFile" --AnalysisFilePath "pathToAnalysisFile"
 ```
 
+you can always refere to the help menu by calling
+```bash
+./uart_debugger -h
+```
+or
+```bash
+./uart_debugger --help
+```
 ----------------------------
 
 ## Design snippets
